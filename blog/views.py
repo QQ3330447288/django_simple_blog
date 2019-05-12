@@ -31,7 +31,7 @@ def get_index_page(request):
     else:
         page = 1
     all_article = Article.objects.all()
-    top10_article_list = Article.objects.order_by('-date')[:10]
+    top5_article_list = Article.objects.order_by('-date')[:5]
     paginator = Paginator(all_article, 8)
 
     page_num = paginator.num_pages
@@ -51,7 +51,7 @@ def get_index_page(request):
                       'curr_page': page,
                       'next_page': next_page,
                       'previous': previous_page,
-                      'top10_article_list': top10_article_list,
+                      'top5_article_list': top5_article_list,
                       'page': page
                   })
 
