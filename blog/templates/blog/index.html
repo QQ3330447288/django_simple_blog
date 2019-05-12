@@ -33,7 +33,11 @@
                         </a>
                     </li>
                     {% for num in page_num %}
+                    {% if num is page %}
+                    <li class="active"><a href="/blog/index?page={{num}}">{{num}}</a></li>
+                    {% else %}
                     <li><a href="/blog/index?page={{num}}">{{num}}</a></li>
+                    {% endif%}
                     {% endfor %}
                     <li>
                         <a href="/blog/index?page={{next_page}}" aria-label="Next">

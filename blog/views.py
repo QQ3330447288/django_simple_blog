@@ -51,7 +51,8 @@ def get_index_page(request):
                       'curr_page': page,
                       'next_page': next_page,
                       'previous': previous_page,
-                      'top10_article_list': top10_article_list
+                      'top10_article_list': top10_article_list,
+                      'page': page
                   })
 
 
